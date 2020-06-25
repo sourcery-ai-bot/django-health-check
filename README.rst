@@ -1,3 +1,5 @@
+THIS FORK HAS BEEN ARCHIVED BECAUSE FEAUTRES HAVE BEEN MERGED INTO MAIN REPOSITORY.
+
 ===================
 django-health-check
 ===================
