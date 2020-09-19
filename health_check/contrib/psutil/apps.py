@@ -16,9 +16,9 @@ class HealthCheckConfig(AppConfig):
             pass
         else:
             plugin_dir.register(DiskUsage)
-        if (hasattr(settings, 'HEALTH_CHECK') and
-                ('DISK_USAGE_MAX' in settings.HEALTH_CHECK) and
-                (settings.HEALTH_CHECK['MEMORY_MIN'] is None)):
-            pass
-        else:
+        if (
+            not hasattr(settings, 'HEALTH_CHECK')
+            or 'DISK_USAGE_MAX' not in settings.HEALTH_CHECK
+            or settings.HEALTH_CHECK['MEMORY_MIN'] is not None
+        ):
             plugin_dir.register(MemoryUsage)
